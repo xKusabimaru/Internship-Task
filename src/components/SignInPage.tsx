@@ -6,7 +6,9 @@ const SignInPage = () => {
           <img src="Logo.svg" alt="Logo"></img>
           <div className="SignInText">
             <p className="SignInHeader">SIGN IN</p>
-            <p className="SignInDefaultP">Enter your credentials to access your account</p>
+            <p className="SignInDefaultP">
+              Enter your credentials to access your account
+            </p>
           </div>
           <form className="SignInForm">
             <label htmlFor="email">Email</label>
@@ -23,7 +25,11 @@ const SignInPage = () => {
               name="password"
               placeholder="Enter your password"
             ></input>
-            <input type="submit" value="SIGN IN" className="SignInButton"></input>
+            <input
+              type="submit"
+              value="SIGN IN"
+              className="SignInButton"
+            ></input>
           </form>
           <p className="SignInDefaultP">
             Forgot your password? <span>Reset Password</span>
