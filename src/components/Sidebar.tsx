@@ -47,7 +47,6 @@ const Sidebar = ({ children }: Props) => {
             <img src="logout.svg" alt="logout"></img>
           </div>
         </NavLink>
-      
       </div>
       <main>{children}</main>
     </div>

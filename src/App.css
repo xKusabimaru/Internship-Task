@@ -8,14 +8,24 @@ body {
   font-family: "Montserrat";
 }
 
-label {
+main {
+  width: 100%;
+}
+
+.MainPage {
+  display: flex;
+}
+
+/* sign in page */
+
+.SignInPage label {
   margin: 16px 0 8px 0;
   font-weight: 500;
   color: #6c6c6c;
   font-size: 0.875rem;
 }
 
-input {
+.SignInPage input {
   padding: 16px;
   width: 100%;
   box-sizing: border-box;
@@ -25,13 +35,13 @@ input {
   border-color: #e5e5e5;
 }
 
-input::placeholder {
+.SignInPage input::placeholder {
   color: #cdcdcd;
   font-weight: 400;
   font-size: 0.75rem;
 }
 
-span {
+.SignInPage span {
   color: #feaf00;
   font-weight: 500;
   text-decoration: underline;
@@ -102,9 +112,7 @@ span {
   cursor: pointer;
 }
 
-.MainPage{
-  display: flex;
-}
+/* sidebar */
 
 .Sidebar {
   min-height: 100vh;
@@ -204,4 +212,48 @@ span {
   justify-content: center;
   margin: 12px;
   gap: 23px;
+}
+
+/* header */
+
+.Header {
+  height: 60px;
+  position: relative;
+}
+
+.PlayButton {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 30px;
+  transform: translate(0, -50%);
+}
+
+.Header > input {
+  position: absolute;
+  margin: 0;
+  width: 212px;
+  top: 50%;
+  right: 95px;
+  transform: translate(0, -50%);
+  height: 38px;
+  background: url(search.svg) no-repeat;
+  background-position: right 12px top 50%;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding-left: 12px;
+}
+
+.Header > input::placeholder {
+  color: #c4c4c4;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.BellButton {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  right: 50px;
+  transform: translate(0, -50%);
 }
