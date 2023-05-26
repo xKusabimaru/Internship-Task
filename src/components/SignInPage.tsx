@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const SignInPage = () => {
   return (
     <>
@@ -25,11 +27,13 @@ const SignInPage = () => {
               name="password"
               placeholder="Enter your password"
             ></input>
-            <input
-              type="submit"
-              value="SIGN IN"
-              className="SignInButton"
-            ></input>
+            <NavLink to="/home" className="SignInNavbar">
+              <input
+                type="submit"
+                value="SIGN IN"
+                className="SignInButton"
+              ></input>
+            </NavLink>
           </form>
           <p className="SignInDefaultP">
             Forgot your password? <span>Reset Password</span>
