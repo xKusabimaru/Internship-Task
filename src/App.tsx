@@ -126,6 +126,41 @@ function App() {
     },
   ];
 
+  let paymentList: any[] = [
+    {
+      name: "Karthi",
+      schedule: "First",
+      bill: "00012223",
+      paid: "INR 35,000",
+      balance: "INR 55,000",
+      date: "08-Dec, 2021",
+    },
+    {
+      name: "Karthi",
+      schedule: "First",
+      bill: "00012223",
+      paid: "INR 35,000",
+      balance: "INR 55,000",
+      date: "08-Dec, 2021",
+    },
+    {
+      name: "Karthi",
+      schedule: "First",
+      bill: "00012223",
+      paid: "INR 35,000",
+      balance: "INR 55,000",
+      date: "08-Dec, 2021",
+    },
+    {
+      name: "Karthi",
+      schedule: "First",
+      bill: "00012223",
+      paid: "INR 35,000",
+      balance: "INR 55,000",
+      date: "08-Dec, 2021",
+    },
+  ];
+
   return (
     <>
       <BrowserRouter>
@@ -163,7 +198,7 @@ function App() {
             element={
               <Sidebar>
                 <Headerbar />
-                <Payment />
+                <Payment items={paymentList} />
               </Sidebar>
             }
           />

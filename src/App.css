@@ -415,7 +415,7 @@ main {
   left: 800px;
 }
 
-.students-info-wrapper{
+.students-info-wrapper {
   height: calc(100vh - 60px - 68px - 2px - 59px - 60px);
   overflow-y: auto;
 }
@@ -475,6 +475,145 @@ main {
 }
 
 .students-trash {
+  position: absolute;
+  right: 20px;
+}
+
+/* payment */
+
+.payment {
+  background-color: #f8f8f8;
+  height: calc(100% - 60px);
+}
+
+.payment > hr {
+  width: calc(100% - 60px);
+  border: 1px solid #e5e5e5;
+  margin: 0 auto;
+}
+
+.payment-header {
+  height: 68px;
+  position: relative;
+}
+
+.payment-header > p {
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: #000000;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0;
+}
+
+.payment-header > img {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.payment-labels {
+  height: 59px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 30px;
+}
+
+.payment-labels > p {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #acacac;
+}
+
+.payment-labels-name {
+  position: absolute;
+  left: 13px;
+}
+
+.payment-labels-schedule {
+  position: absolute;
+  left: 172px;
+}
+
+.payment-labels-bill {
+  position: absolute;
+  left: 362px;
+}
+
+.payment-labels-paid {
+  position: absolute;
+  left: 525px;
+}
+
+.payment-labels-balance {
+  position: absolute;
+  left: 703px;
+}
+
+.payment-labels-date {
+  position: absolute;
+  left: 881px;
+}
+
+.payment-info-wrapper {
+  height: calc(100vh - 60px - 68px - 2px - 59px - 60px);
+  overflow-y: auto;
+}
+
+.payment-info {
+  display: flex;
+  position: relative;
+  background-color: #ffffff;
+  margin: 0 30px;
+  height: 51px;
+  align-items: center;
+}
+
+.payment-info:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+.payment-info > p {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #000000;
+}
+
+.payment-info-name {
+  position: absolute;
+  left: 13px;
+}
+
+.payment-info-schedule {
+  position: absolute;
+  left: 171px;
+}
+
+.payment-info-bill {
+  position: absolute;
+  left: 361px;
+}
+
+.payment-info-paid {
+  position: absolute;
+  left: 525px;
+}
+
+.payment-info-balance {
+  position: absolute;
+  left: 703px;
+}
+
+.payment-info-date {
+  position: absolute;
+  left: 881px;
+}
+
+.payment-info-eye {
   position: absolute;
   right: 20px;
 }

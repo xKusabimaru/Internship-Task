@@ -1,8 +1,8 @@
-interface Props{
-  items: any[]
+interface Props {
+  items: any[];
 }
 
-const Students = ({items}:Props) => {
+const Students = ({ items }: Props) => {
   return (
     <div className="students">
       <div className="students-header">
@@ -10,7 +10,7 @@ const Students = ({items}:Props) => {
         <img src="arrows.svg" alt="arrows"></img>
         <button>ADD NEW STUDENT</button>
       </div>
-      <hr/>
+      <hr />
       <div className="students-labels">
         <p className="students-labels-name">Name</p>
         <p className="students-labels-email">Email</p>
@@ -33,7 +33,7 @@ const Students = ({items}:Props) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Students
+export default Students;
