@@ -11,6 +11,121 @@ import Settings from "./components/Settings";
 import Headerbar from "./components/Headerbar";
 
 function App() {
+  let studentList: any[] = [
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+    {
+      img: "pexels-photo-2379004 1.png",
+      name: "Karthi",
+      email: "karthi@gmmail.com",
+      phone: "7305477760",
+      number: "1234567305477760",
+      date: "08-Dec, 2021",
+    },
+  ];
+
   return (
     <>
       <BrowserRouter>
@@ -39,7 +154,7 @@ function App() {
             element={
               <Sidebar>
                 <Headerbar />
-                <Students />
+                <Students items={studentList} />
               </Sidebar>
             }
           />

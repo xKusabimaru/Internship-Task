@@ -261,11 +261,12 @@ main {
 /* home */
 
 .home {
-  margin: 30px;
-  height: calc(100% - 60px);
+  padding: 30px;
+  height: calc(100% - 90px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  background-color: #fdfdfd;
 }
 
 .home > div {
@@ -322,4 +323,158 @@ main {
 
 .home-info > span {
   font-size: 1.125rem;
+}
+
+/* students */
+
+.students {
+  background-color: #f8f8f8;
+  height: calc(100% - 60px);
+}
+
+.students > hr {
+  width: calc(100% - 60px);
+  border: 1px solid #e5e5e5;
+  margin: 0 auto;
+}
+
+.students-header {
+  height: 68px;
+  position: relative;
+}
+
+.students-header > p {
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: #000000;
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0;
+}
+
+.students-header > img {
+  position: absolute;
+  right: 260px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.students-header > button {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 200px;
+  background-color: #feaf00;
+  border: none;
+  border-radius: 4px;
+  height: 44px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.students-labels {
+  height: 59px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 30px;
+}
+
+.students-labels > p {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #acacac;
+}
+
+.students-labels-name {
+  position: absolute;
+  left: 110px;
+}
+
+.students-labels-email {
+  position: absolute;
+  left: 270px;
+}
+
+.students-labels-phone {
+  position: absolute;
+  left: 460px;
+}
+
+.students-labels-number {
+  position: absolute;
+  left: 580px;
+}
+
+.students-labels-date {
+  position: absolute;
+  left: 800px;
+}
+
+.students-info-wrapper{
+  height: calc(100vh - 60px - 68px - 2px - 59px - 60px);
+  overflow-y: auto;
+}
+
+.students-info {
+  display: flex;
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 10px 30px;
+  height: 85px;
+  align-items: center;
+}
+
+.students-info > p {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #000000;
+}
+
+.student-img {
+  width: 65px;
+  height: 55px;
+  border-radius: 8px;
+  position: absolute;
+  left: 14px;
+}
+
+.students-info-name {
+  position: absolute;
+  left: 110px;
+}
+
+.students-info-email {
+  position: absolute;
+  left: 270px;
+}
+
+.students-info-phone {
+  position: absolute;
+  left: 460px;
+}
+
+.students-info-number {
+  position: absolute;
+  left: 580px;
+}
+
+.students-info-date {
+  position: absolute;
+  left: 800px;
+}
+
+.students-pin {
+  position: absolute;
+  right: 70px;
+}
+
+.students-trash {
+  position: absolute;
+  right: 20px;
 }
