@@ -48,7 +48,7 @@ main {
 }
 
 .SignInPage {
-  background-image: linear-gradient(to right, #feaf00, #f8d442);
+  background-image: linear-gradient(71.17deg, #feaf00 19.35%, #f8d442 90.12%);
   min-height: 100vh;
 }
 
@@ -256,4 +256,70 @@ main {
   top: 50%;
   right: 50px;
   transform: translate(0, -50%);
+}
+
+/* home */
+
+.home {
+  margin: 30px;
+  height: calc(100% - 60px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.home > div {
+  position: relative;
+  height: 160px;
+  border-radius: 8px;
+  width: 255px;
+  margin: 0 auto;
+}
+
+.home > div > img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.home-students {
+  background-color: #f0f9ff;
+}
+
+.home-course {
+  background-color: #fef6fb;
+}
+
+.home-payments {
+  background-color: #fefbec;
+}
+
+.home-users {
+  background-image: linear-gradient(110.42deg, #feaf00 18.27%, #f8d442 91.84%);
+}
+
+.home-name {
+  color: #6c6c6c;
+  font-weight: 500;
+  font-size: 0.875rem;
+  position: absolute;
+  left: 20px;
+  top: 60px;
+}
+
+.home-user-name {
+  color: #ffffff;
+}
+
+.home-info {
+  font-weight: 700;
+  font-size: 1.875rem;
+  color: #000000;
+  position: absolute;
+  right: 20px;
+  top: 80px;
+}
+
+.home-info > span {
+  font-size: 1.125rem;
 }
