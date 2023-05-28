@@ -1,6 +1,8 @@
-import { collection, deleteDoc, getDocs } from "firebase/firestore";
+import { deleteDoc } from "firebase/firestore";
 import { doc } from "firebase/firestore";
 import { db } from "../firebase";
+import CreateStudent from "./CreateStudent";
+import { useState } from "react";
 
 interface Props {
   items: any[];
@@ -13,12 +15,14 @@ const Students = ({ items }: Props) => {
     window.location.reload();
   };
 
+  const [isCreate, setIsCreate] = useState(false);
+
   return (
     <div className="students">
       <div className="students-header">
         <p>Students List</p>
         <img src="arrows.svg" alt="arrows"></img>
-        <button>ADD NEW STUDENT</button>
+        <button onClick={()=>setIsCreate(true)}>ADD NEW STUDENT</button>
       </div>
       <hr />
       <div className="students-labels">
@@ -49,6 +53,7 @@ const Students = ({ items }: Props) => {
           </div>
         ))}
       </div>
+      <CreateStudent isTrigger={isCreate} setIsTrigger={setIsCreate}/>
     </div>
   );
 };
