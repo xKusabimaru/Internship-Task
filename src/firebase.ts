@@ -3,13 +3,13 @@ import { collection, getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_APIKEY,
-  authDomain: import.meta.env.VITE_AUTH,
-  projectId: import.meta.env.VITE_ID,
-  storageBucket: import.meta.env.VITE_STORAGE,
-  messagingSenderId: import.meta.env.VITE_SENDER,
-  appId: import.meta.env.VITE_APP,
-  measurementId: import.meta.env.VITE_MEASUREMENT
+  apiKey: process.env.VITE_APIKEY,
+  authDomain: process.env.VITE_AUTH,
+  projectId: process.env.VITE_ID,
+  storageBucket: process.env.VITE_STORAGE,
+  messagingSenderId: process.env.VITE_SENDER,
+  appId: process.env.VITE_APP,
+  measurementId: process.env.VITE_MEASUREMENT
 };
 
 const app = initializeApp(firebaseConfig);
