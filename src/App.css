@@ -16,6 +16,10 @@ main {
   display: flex;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* sign in page */
 
 .SignInPage label {
@@ -179,7 +183,6 @@ main {
   align-items: center;
   border: none;
   background-color: transparent;
-  cursor: pointer;
   border-radius: 4px;
   width: 100%;
 }
@@ -472,11 +475,13 @@ main {
 .students-pin {
   position: absolute;
   right: 70px;
+  cursor: pointer;
 }
 
 .students-trash {
   position: absolute;
   right: 20px;
+  cursor: pointer;
 }
 
 /* payment */

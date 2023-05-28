@@ -9,157 +9,41 @@ import Payment from "./components/Payment";
 import Report from "./components/Report";
 import Settings from "./components/Settings";
 import Headerbar from "./components/Headerbar";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
 function App() {
-  let studentList: any[] = [
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-    {
-      img: "pexels-photo-2379004 1.png",
-      name: "Karthi",
-      email: "karthi@gmmail.com",
-      phone: "7305477760",
-      number: "1234567305477760",
-      date: "08-Dec, 2021",
-    },
-  ];
+  const [students, setStudents] = useState([]);
+  const studentsCollectionRef = collection(db, "students");
 
-  let paymentList: any[] = [
-    {
-      name: "Karthi",
-      schedule: "First",
-      bill: "00012223",
-      paid: "INR 35,000",
-      balance: "INR 55,000",
-      date: "08-Dec, 2021",
-    },
-    {
-      name: "Karthi",
-      schedule: "First",
-      bill: "00012223",
-      paid: "INR 35,000",
-      balance: "INR 55,000",
-      date: "08-Dec, 2021",
-    },
-    {
-      name: "Karthi",
-      schedule: "First",
-      bill: "00012223",
-      paid: "INR 35,000",
-      balance: "INR 55,000",
-      date: "08-Dec, 2021",
-    },
-    {
-      name: "Karthi",
-      schedule: "First",
-      bill: "00012223",
-      paid: "INR 35,000",
-      balance: "INR 55,000",
-      date: "08-Dec, 2021",
-    },
-  ];
+  const [payments, setPayments] = useState([]);
+  const paymentsCollectionRef = collection(db, "payments");
+
+  useEffect(() => {
+    const getStudents = async () => {
+      const data: any = await getDocs(studentsCollectionRef);
+      setStudents(
+        data.docs.map((doc: { data: () => any; id: any }) => ({
+          ...doc.data(),
+          id: doc.id,
+        }))
+      );
+    };
+
+    const getPayments = async () => {
+      const data: any = await getDocs(paymentsCollectionRef);
+      setPayments(
+        data.docs.map((doc: { data: () => any; id: any }) => ({
+          ...doc.data(),
+          id: doc.id,
+        }))
+      );
+    };
+
+    getStudents();
+    getPayments();
+  }, []);
 
   return (
     <>
@@ -189,7 +73,7 @@ function App() {
             element={
               <Sidebar>
                 <Headerbar />
-                <Students items={studentList} />
+                <Students items={students} />
               </Sidebar>
             }
           />
@@ -198,7 +82,7 @@ function App() {
             element={
               <Sidebar>
                 <Headerbar />
-                <Payment items={paymentList} />
+                <Payment items={payments} />
               </Sidebar>
             }
           />
