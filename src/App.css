@@ -658,3 +658,12 @@ button {
 .create-student-form > form > input{
   margin: 6px 0;
 }
+
+.create-student-fill{
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

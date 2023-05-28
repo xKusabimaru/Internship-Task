@@ -10,13 +10,15 @@ import Report from "./components/Report";
 import Settings from "./components/Settings";
 import Headerbar from "./components/Headerbar";
 import { useEffect, useState } from "react";
-import { addDoc, collection, getDocs } from "firebase/firestore";
-import { db, db_storage, studentsCollectionRef } from "./firebase";
 import {
-  getDownloadURL,
-  ref,
-  uploadBytesResumable,
-} from "firebase/storage";
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  updateDoc,
+} from "firebase/firestore";
+import { db, db_storage, studentsCollectionRef } from "./firebase";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { v4 } from "uuid";
 
 export async function handleCreateSubmet(
@@ -41,6 +43,24 @@ export async function uploadImage(image: File): Promise<string> {
   const image_storage = ref(db_storage, `images/${v4()}`);
   await uploadBytesResumable(image_storage, image);
   return await getDownloadURL(image_storage);
+}
+
+export async function handleUpdateSubmet(
+  id: any,
+  selectedName: string,
+  selectedEmail: string,
+  selectedPhone: string,
+  selectedNumber: string,
+  selectedDate: string
+): Promise<any> {
+  const studentDoc = doc(db, "students", id);
+  return await updateDoc(studentDoc, {
+    name: selectedName,
+    email: selectedEmail,
+    phone: selectedPhone,
+    number: selectedNumber,
+    date: selectedDate,
+  });
 }
 
 function App() {

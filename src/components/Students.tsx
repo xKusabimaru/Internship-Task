@@ -3,6 +3,7 @@ import { doc } from "firebase/firestore";
 import { db } from "../firebase";
 import CreateStudent from "./CreateStudent";
 import { useState } from "react";
+import UpdateStudent from "./UpdateStudent";
 
 interface Props {
   items: any[];
@@ -16,13 +17,20 @@ const Students = ({ items }: Props) => {
   };
 
   const [isCreate, setIsCreate] = useState(false);
+  const [isUpdate, setIsupdate] = useState(false);
+  const [id, setId] = useState("");
+  const [selectedName, setSelectedName] = useState("");
+  const [selectedEmail, setSelectedEmail] = useState("");
+  const [selectedPhone, setSelectedPhone] = useState("");
+  const [selectedNumber, setSelectedNumber] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
 
   return (
     <div className="students">
       <div className="students-header">
         <p>Students List</p>
         <img src="arrows.svg" alt="arrows"></img>
-        <button onClick={()=>setIsCreate(true)}>ADD NEW STUDENT</button>
+        <button onClick={() => setIsCreate(true)}>ADD NEW STUDENT</button>
       </div>
       <hr />
       <div className="students-labels">
@@ -41,7 +49,20 @@ const Students = ({ items }: Props) => {
             <p className="students-info-phone">{item.phone}</p>
             <p className="students-info-number">{item.number}</p>
             <p className="students-info-date">{item.date}</p>
-            <img src="pin.svg" alt="pin" className="students-pin"></img>
+            <img
+              src="pin.svg"
+              alt="pin"
+              className="students-pin"
+              onClick={() => {
+                setIsupdate(true);
+                setId(item.id);
+                setSelectedName(item.name);
+                setSelectedEmail(item.email);
+                setSelectedPhone(item.phone);
+                setSelectedNumber(item.number);
+                setSelectedDate(item.date);
+              }}
+            ></img>
             <img
               src="trash.svg"
               alt="trash"
@@ -53,7 +74,17 @@ const Students = ({ items }: Props) => {
           </div>
         ))}
       </div>
-      <CreateStudent isTrigger={isCreate} setIsTrigger={setIsCreate}/>
+      <CreateStudent isTrigger={isCreate} setIsTrigger={setIsCreate} />
+      <UpdateStudent
+        isTrigger={isUpdate}
+        setIsTrigger={setIsupdate}
+        id={id}
+        name={selectedName}
+        email={selectedEmail}
+        phone={selectedPhone}
+        number={selectedNumber}
+        date={selectedDate}
+      />
     </div>
   );
 };
